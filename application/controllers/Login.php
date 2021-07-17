@@ -14,6 +14,10 @@ class Login extends CI_Controller
 		$this->load->library(array('session', 'form_validation'));
 
 		$this->user = new User_model;
+		$logged_in = $this->session->userdata('logged_in');
+        if ($logged_in) {
+        	redirect(base_url() . 'category');
+        }
 	}
 
 	/**
