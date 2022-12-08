@@ -23,6 +23,10 @@ class Login extends CI_Controller
 	*/
 	public function index()
 	{
+		$logged_in = $this->session->userdata('logged_in');
+	    if ($logged_in)
+	        redirect(base_url() . 'category');
+	    else
 		$this->load->view('login/login');
 	}
 

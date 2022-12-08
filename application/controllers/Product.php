@@ -22,6 +22,43 @@ class Product extends CI_Controller
 	}
 
 	/**
+	 * Function _remap
+	 * use for the check the perticular method avaible or not
+	*/
+	/*function _remap($function, $argument)
+	{	
+		
+
+		switch ($function) {
+	    	case 'create' : 
+	      		$this->create();// call create() function.
+	     	break;
+	     	case 'edit' : 
+	      		$this->edit($argument[0]);// call edit() function.
+	     	break;
+	     	case 'store' : 
+	      		$this->store();// call store() function.
+	     	break;
+
+	     	case 'update' : 
+	      		$this->update($argument[0]);// call update() function.
+	     	break;
+
+	     	case 'delete' : 
+	      		$this->delete();// call delete() function.
+	     	break;
+
+	     	case 'show' : 
+	      		$this->show($argument[0]);// call delete() function.
+	     	break;
+	     	
+	     	default :
+	      		$this->index();
+	     	break;
+	 	}
+	}*/
+	
+	/**
 	* Function index
 	* Use for the display the list of records on screen
 	* @return array $data
@@ -64,6 +101,7 @@ class Product extends CI_Controller
 		$this->form_validation->set_rules('name', 'Name', 'required');
 		$this->form_validation->set_rules('category_id', 'category_id', 'required');
 		
+		//print_r($this->config->item('foo'));die;	
 		if ($this->form_validation->run() == FALSE) {
 		    $this->session->set_flashdata('errors', validation_errors());
 		    redirect(base_url('product/create'));

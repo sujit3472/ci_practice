@@ -24,12 +24,13 @@ class Product_model extends CI_Model
 	* @return returns the desired result
 	*/
 	public function get_product($limit, $start) {
+		$this->db->cache_on();
 	    $this->db->limit($limit, $start);
 		$this->db->select('product.name as product_name, category.name as category_name, product.created_at as product_created_date, product.id as product_id');
 	    $this->db->from($this->table);
 	    $this->db->join('category', 'category.id = product.category_id');
 	    $query = $this->db->get();
-	    
+	    $this->db->cache_off();
 	    return $query->result();
 	}
 

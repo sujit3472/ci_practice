@@ -71,6 +71,7 @@ $route['category/store'] 	   = "category/store";
 $route['category/show/(:num)'] = "category/show/$1";
 $route['category/edit/(:any)'] = "category/edit/$1";
 $route['category/(:any)']['delete'] = "category/delete/$1";
+$route['category/(:any)']['put'] = "category/update/$1";
 
 ##route for the product
 $route['product/(:num)'] = "product/index";

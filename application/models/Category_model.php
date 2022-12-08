@@ -24,8 +24,10 @@ class Category_model extends CI_Model
 	* @return returns the desired result
 	*/
 	public function get_category($limit, $start) {
+		$this->db->cache_on();
 	    $this->db->limit($limit, $start);
-	    $query = $this->db->get($this->table);
+	    
+	    $query = $this->db->query("SELECT * FROM " . $this->table);
 	    return $query->result();
 	}
 

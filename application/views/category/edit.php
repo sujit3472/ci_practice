@@ -13,7 +13,7 @@ include(APPPATH.'views/layout/main_layout.php');
 </div>
         
 
-<form method="post" action="<?php echo base_url('category/update/'.$item->id);?>">
+<form method="put" action="<?php echo base_url('category/update/'.$item->id);?>">
     <?php
         if ($this->session->flashdata('errors')){
             echo '<div class="alert alert-danger">';
