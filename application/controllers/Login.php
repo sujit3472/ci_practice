@@ -14,6 +14,7 @@ class Login extends CI_Controller
 		$this->load->library(array('session', 'form_validation'));
 
 		$this->user = new User_model;
+		// echo CI_VERSION;
 	}
 
 	/**

@@ -20,7 +20,7 @@ class Article extends CI_Controller {
 		test_method();
 
 		$this->load->library('email');
-		$this->email->mytest();
+		//$this->email->mytest();
 		$articles = $this->Article_model->articles();
 		$data['articles'] = $articles;
 		// print_r($articles);

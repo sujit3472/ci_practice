@@ -22,8 +22,14 @@ include(APPPATH.'views/layout/main_layout.php');
             echo "</div>";
         }
     ?>
-
+    <?php 
+        $csrf = array(
+            'name' => $this->security->get_csrf_token_name(),
+            'hash' => $this->security->get_csrf_hash()
+        );
+    ?>
     <div class="row">
+        <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
